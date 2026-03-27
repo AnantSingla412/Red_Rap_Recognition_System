@@ -16,3 +16,7 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+models/best_model.pt
+
+demo.mp4
