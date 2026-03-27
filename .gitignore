@@ -1,0 +1,18 @@
+# cloned repos
+Cap-detection/
+
+# virtual environment
+venv/
+
+
+# large model — download manually
+models/w600k_r50.onnx
+
+# python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db

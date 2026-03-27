@@ -1,0 +1,9 @@
+setuptools<82
+opencv-python>=4.13.0
+numpy>=2.2.6
+onnxruntime>=1.23.2
+ultralytics>=8.4.30
+scikit-learn>=1.7.2
+Pillow>=12.1.1
+streamlit>=1.55.0
+requests>=2.33.0
