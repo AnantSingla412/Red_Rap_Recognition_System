@@ -1,7 +1,14 @@
+
 # Red Cap Recognition System
 
 Real-time detection and identification of persons wearing a red cap using
 YOLOv8, ArcFace, and OpenCV.
+
+---
+
+## Demo
+
+[Watch Demo Video](https://drive.google.com/file/d/1B19bYspI2oBIeEEOMq2Uh__zLKT9K26V/view)
 
 ---
 
@@ -22,7 +29,7 @@ red_cap_reco/
 │
 ├── models/
 │   ├── face_detection_yunet_2023mar.onnx   # included in repo
-│   ├── best_model.pt                        # included in repo
+│   ├── best_model.pt                        # download manually (see below)
 │   └── w600k_r50.onnx                       # download manually (see below)
 │
 ├── modules/
@@ -43,7 +50,7 @@ red_cap_reco/
 ├── main.py                   # run without UI
 ├── run_capture.py            # webcam enrollment capture
 ├── enroll.py                 # build embeddings from dataset
-├── app.py                   # Streamlit home page
+├── app.py                    # Streamlit home page
 └── requirements.txt
 ```
 
@@ -54,8 +61,8 @@ red_cap_reco/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/red_cap_reco.git
-cd red_cap_reco
+git clone https://github.com/AnantSingla412/Red_Rap_Recognition_System.git
+cd Red_Rap_Recognition_System
 ```
 
 ### 2. Create and activate a virtual environment
@@ -76,21 +83,25 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Download the ArcFace model
-
-`w600k_r50.onnx` is too large for GitHub. Download it manually:
-
+### 4. Download the cap detection model
 
 ```bash
-Windows (PowerShell)
-curl -L -o models/w600k_r50.onnx https://huggingface.co/public-data/insightface/resolve/33c1063c49c785b7652d3fd529f86fa4f149392b/models/buffalo_l/w600k_r50.onnx
----
+curl -L -o models/best_model.pt https://github.com/ravee360/Cap-detection/raw/main/best.pt
+```
 
+### 5. Download the ArcFace model
+
+```bash
+# Windows (PowerShell)
+curl -L -o models/w600k_r50.onnx https://huggingface.co/public-data/insightface/resolve/33c1063c49c785b7652d3fd529f86fa4f149392b/models/buffalo_l/w600k_r50.onnx
+```
 
 Or download manually:
-[https://huggingface.co/public-data/insightface/resolve/33c1063c49c785b7652d3fd529f86fa4f149392b/models/buffalo_l/w600k_r50.onnx](https://huggingface.co/public-data/insightface/resolve/33c1063c49c785b7652d3fd529f86fa4f149392b/models/buffalo_l/w600k_r50.onnx)
+https://huggingface.co/public-data/insightface/resolve/33c1063c49c785b7652d3fd529f86fa4f149392b/models/buffalo_l/w600k_r50.onnx
 
 Place the downloaded file inside the `models/` folder.
+
+---
 
 ## Running the Project
 
@@ -141,7 +152,4 @@ See `requirements.txt` for full package list.
 - First launch takes **1–2 minutes** — models are loading in the background
 - Enroll each person in **good lighting** for best accuracy
 - Re-run `enroll.py` after adding new persons to update embeddings
-
-
-
 
